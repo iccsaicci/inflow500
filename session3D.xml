@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <NEKTAR>
     <EXPANSIONS>
-        <E COMPOSITE="C[272,273]" NUMMODES="5" TYPE="MODIFIED" FIELDS="u,v,w" />
-        <E COMPOSITE="C[272,273]" NUMMODES="4" TYPE="MODIFIEDQUADPLUS1" FIELDS="p" />
+        <E COMPOSITE="C[272,273]" NUMMODES="4" TYPE="MODIFIED" FIELDS="u,v,w" />
+        <E COMPOSITE="C[272,273]" NUMMODES="3" TYPE="MODIFIEDQUADPLUS1" FIELDS="p" />
     </EXPANSIONS>
     <CONDITIONS>
         <SOLVERINFO>
@@ -33,11 +33,11 @@
 
     <PARAMETERS>
         <P> TimeStep      =    1.0e-3                                       </P> <!-- Time step -->   
-        <P> NumSteps      =    20000                                        </P> <!-- Number of step -->
+        <P> NumSteps      =    10000                                        </P> <!-- Number of step -->
         <P> IO_CheckSteps =    1000                                        </P> <!-- Number of step to write the intermediate results -->
         <P> IO_InfoSteps  =    100                                        </P> <!-- Number of step to print information -->
         <P> IO_CFLSteps   =    100                                        </P> <!-- Number of step to print CFL number  -->
-        <P> Re            = 159                                   </P>
+        <P> Re            = 500                                   </P>
         <P> Kinvis        = 1/Re             	                       </P>
 
         <!--  
@@ -100,19 +100,19 @@
 	    </FILTER>
 
         <FILTER TYPE="HistoryPoints">
-              <PARAM NAME="OutputFile">History_inlet</PARAM> <PARAM NAME="OutputFrequency">5000</PARAM> <PARAM NAME="plane">
+              <PARAM NAME="OutputFile">History_inlet</PARAM> <PARAM NAME="OutputFrequency">1000</PARAM> <PARAM NAME="plane">
                 100, 100, 36,44.82,0, 36,44.82,1, 36,43.56,1, 36,43.56,0
 	      </PARAM>
 	    </FILTER>
 
         <FILTER TYPE="HistoryPoints">
-              <PARAM NAME="OutputFile">History_outlet</PARAM> <PARAM NAME="OutputFrequency">5000</PARAM> <PARAM NAME="plane">
+              <PARAM NAME="OutputFile">History_outlet</PARAM> <PARAM NAME="OutputFrequency">1000</PARAM> <PARAM NAME="plane">
                 100, 100, 36,42.27,1, 36,41.01,1, 36,41.01,0, 36,42.27,0
 	      </PARAM>
 	    </FILTER>
 
         <FILTER TYPE="HistoryPoints">
-              <PARAM NAME="OutputFile">History_bend</PARAM> <PARAM NAME="OutputFrequency">5000</PARAM> <PARAM NAME="plane">
+              <PARAM NAME="OutputFile">History_bend</PARAM> <PARAM NAME="OutputFrequency">1000</PARAM> <PARAM NAME="plane">
                 100, 100, 43.005,42.915,1, 44.265,42.915,1, 44.265,42.915,0, 43.005,42.915,0
 	      </PARAM>
 	    </FILTER>
